@@ -19,19 +19,17 @@ still be block elements, stacked vertically. We'll add styling later.
 export default function App() {
     const dataElements = data.map( object => {
         return (<Card 
-            title={object.title} 
-            price={object.price}
-            img={object.coverImg}
-            rating={object.stats.rating}
-            reviewCount={object.stats.reviewCount}
-            location={object.location}
+            {...object}
         />)
     })
     return (
         <div>
             <Navbar />
             <Hero />
-            {dataElements}
+            <div className="card--list">
+                {dataElements}
+            </div>
+            
         </div>
     )
 }
